@@ -1,0 +1,13 @@
+d41d8cd98f00b204e9800998ecf8427e *ChangeLog
+2348af2e2d4dcad0cbdc593d269dae93 *DESCRIPTION
+e4276d0e834219056fc776e43bfddb2e *NAMESPACE
+2d7cc9c5f168d66088fb74bbcebb3a05 *R/bbo.R
+25533aed10bbba985c8c6fb796544e47 *R/methods.R
+057b0c4768a09b5f89375c2f04b1faa4 *R/zzz.R
+a8a1fa8ea5fe3c68d55ca6d5ccb184eb *inst/doc/bbo-plot-bbo.pdf
+9872e6c5a26bb43e059c7cac8bede197 *inst/doc/bbo.Rnw
+373d7149f7e7954b0795717687d66fdb *inst/doc/bbo.bib
+a7d824fa05b6810af9c844cc46edba7d *inst/doc/bbo.pdf
+ed46feea5b7840d881e147beb58587ca *man/bbo-methods.Rd
+2bba3295a82b4bdfb5e7ac7c012bbbaa *man/bbo.Rd
+b3dd981271253376a11c424765ae5a11 *man/bbo.control.Rd

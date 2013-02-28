@@ -1,0 +1,3 @@
+S3method(plot, bbo)
+S3method(summary, bbo)
+export(bbo, bbo.control)

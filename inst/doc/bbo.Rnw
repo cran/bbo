@@ -1,0 +1,96 @@
+\documentclass[a4paper]{article}
+\SweaveSyntax{SweaveSyntaxLatex}
+
+%\VignetteIndexEntry{Using bbo}
+
+\usepackage{cite, hyperref}
+
+\title{`bbo' Package}
+\author{Sarvesh Nikumbh}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+{\tt snikumbh@mpi-inf.mpg.de}
+\end{center}
+
+\tableofcontents
+
+\section{Licensing}
+This package is licensed under GNU General Public License version 3 (GPLv3).
+
+\section{Introduction}
+This package is an R implementation of the 'Biogeography-Based Optimization'\footnote{http://embeddedlab.csuohio.edu/BBO/} technique invented by Prof. D. Simon, Cleveland State University, Ohio. More details of this method can be looked up at http://embeddedlab.csuohio.edu/BBO/ and in \cite{bbo}
+
+The core function of this package is $bbo$ which outputs a list object of $bbo$. This list contains the details of the final best computed solution and the best habitat leading to the best solution in addition to habitats leading to best solutions at each iteration of the optimization loop. The function $summary$ and $plot$ present more information about this object.
+
+
+\section{Usage}
+
+The $bbo$ function takes as input the following:
+\begin{itemize}
+\item the objective function
+\item the lower limit for each parameter/variable; a scalar real value for each parameter
+\item the upper limit for each parameter/variable; a scalar real value for each parameter
+\item a display flag denoting verbose output
+\item boolean variable to plot results
+\item a random seed
+\item control parameters for the biogeography-based optimization technique
+\end{itemize}
+
+
+The control parameters to be set for the optimization technique are:
+\begin{itemize}
+\item probability that a habitat gets modified
+\item habitat mutation probability
+\item habitat elitism parameter
+\item population size (\#habitats)
+\item \#generations
+\item number of variables to be optimized (dimensionality of the problem)
+\item whether order dependency of the parameters is TRUE?
+\end{itemize}
+
+These control parameters can be set by a call to $bbo.control$. More information about the default values for these parameters can be seen in the help for these individual functions.
+
+
+\begin{Scode}{bbo}
+library(bbo)
+Rosenbrock <- function(x){
+          x1 <- x[1]
+          x2 <- x[2]
+          return(  100 * (x2 - x1 * x1)^2 + (1 - x1)^2 )
+        }
+output.of.bbo <- bbo(Rosenbrock, -1, 2, 
+                     control = bbo.control(pMutate = 0.4, numVar = 2, 
+                                           popSize = 50, KEEP = 10, maxGen = 10))
+
+\end{Scode}
+
+
+The summary of this $bbo$ object can be obtained with the $summary$ function.
+
+\begin{Scode}{bbo-summary}
+output.of.bbo <- bbo(Rosenbrock, -1, 2, 
+                     control = bbo.control(pMutate = 0.4, numVar = 2, 
+                     			   popSize = 50, KEEP = 10, maxGen = 10))
+bbo:::summary.bbo(output.of.bbo)
+\end{Scode}
+
+And the plot function can be used to visualize the results of the optimization.
+
+\begin{Scode}{plot-bbo,fig=TRUE,echo=TRUE}
+bbo:::plot.bbo(output.of.bbo, plot.type = c("itersBestValue"))
+\end{Scode}
+
+%\begin{figure*}[t]
+%\centering
+%\includegraphics[width=1.0\textwidth]{bbo-plot-bbo.pdf}
+%\caption{Plotting the bbo output variable}
+%\end{figure*}
+
+
+\bibliographystyle{plain}
+\bibliography{bbo}
+
+\end{document}
