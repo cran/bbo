@@ -1,7 +1,7 @@
 Package: bbo
 Type: Package
 Title: Biogeography-Based Optimization
-Version: 0.1
+Version: 0.2
 Date: 2013-02-28
 Author: Sarvesh Nikumbh (BBO originally invented by Prof. Dan Simon,
         Cleveland State University, Ohio)
@@ -18,6 +18,6 @@ LazyLoad: yes
 Repository: CRAN
 Depends:
 Suggests:
-Packaged: 2013-04-19 00:02:15 UTC; nikumbh
+Packaged: 2014-09-18 12:11:56 UTC; snikumbh
 NeedsCompilation: no
-Date/Publication: 2013-04-19 06:21:50
+Date/Publication: 2014-09-18 17:26:25

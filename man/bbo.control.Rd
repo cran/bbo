@@ -7,7 +7,11 @@
   in \code{bbo}.
 }
 \usage{
-bbo.control(pModify = 1, pMutate = 0.3, KEEP = 5, popSize = 20, maxGen = 20, numVar = 2, orderDep = TRUE)
+bbo.control(pModify = 1, pMutate = 0.3, KEEP = 5, 
+					popSize = 20, 
+					maxGen = 20, 
+					numVar = 2, 
+					orderDep = TRUE)
 }
 
 \arguments{

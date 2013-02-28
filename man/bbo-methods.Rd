@@ -65,7 +65,13 @@
           return(  100 * (x2 - x1 * x1)^2 + (1 - x1)^2 )
         }
 
-        sample.output.of.bbo <- bbo(Rosenbrock, -5, 5, DisplayFlag = FALSE, control = bbo.control(pMutate = 0.4, numVar = 2, popSize = 50, KEEP = 5, maxGen = 20))
+        sample.output.of.bbo <- bbo(Rosenbrock, -5, 5, 
+					DisplayFlag = FALSE, 
+					control = bbo.control(pMutate = 0.4, 
+								numVar = 2, 
+								popSize = 50, 
+								KEEP = 5, 
+								maxGen = 20))
 
 	## print the output information
 	bbo:::summary.bbo(sample.output.of.bbo)

@@ -82,7 +82,12 @@ bbo(fn, lower, upper, DisplayFlag = TRUE, RandSeed, control = bbo.control(), ...
 	  return(  100 * (x2 - x1 * x1)^2 + (1 - x1)^2 )
   	}
 
-	bbo(Rosenbrock, -5, 5, control = bbo.control(pMutate = 0.4, numVar = 2, popSize = 50, KEEP = 5, maxGen = 20))
+	bbo(Rosenbrock, -5, 5, control = 
+		bbo.control(pMutate = 0.4, 
+				numVar = 2, 
+				popSize = 50, 
+				KEEP = 5, 
+				maxGen = 20))
 
 
 }
